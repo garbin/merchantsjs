@@ -1,6 +1,6 @@
 {
   "name": "merchants",
-  "version": "0.2.0",
+  "version": "0.1.1",
   "description": "A framework agnostic, multi-gateway payment processing library for node.js, like Omnipay for php or ActiveMerchants for ruby",
   "main": "lib/index.js",
   "scripts": {
