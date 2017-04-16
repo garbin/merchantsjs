@@ -1,5 +1,8 @@
-const { describe, it, expect } = global
+const { describe, it, expect, jasmine, beforeEach } = global
 const {Merchants, gateways: { Alipay, Stripe }, Request, Response} = require('../lib')
+beforeEach(function () {
+  jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000
+})
 describe('Merchant', function () {
   it('merchant initialize', function () {
     const merchants = new Merchants()
@@ -35,12 +38,18 @@ describe('Merchant', function () {
     expect(request).toBeInstanceOf(Request)
     expect(request.type).toBe('redirect')
     expect(request.body.method).toBe('get')
-    console.log(await request.redirect())
+    const redirect = await request.redirect()
+    expect(typeof redirect === 'string').toBeTruthy()
   })
-  // it('merchant async callback', async function () {
-  //   const merchants = new Merchants()
-  //   merchants.use(new Alipay({}))
-  //   const response = await merchants.using('alipay').callback({})
-  //   expect(response).toBeInstanceOf(Response)
-  // })
+  it('merchant async callback', async function () {
+    const merchants = new Merchants()
+    merchants.use(new Alipay({}))
+    let response
+    try {
+      response = await merchants.using('alipay').callback({})
+    } catch (e) {
+      expect(e).toBeInstanceOf(Error)
+    }
+    expect(response).toBeUndefined()
+  })
 })
