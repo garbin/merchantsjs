@@ -1,4 +1,16 @@
 # merchants for Node.js
+merchants is a framework agnostic, multi-gateway payment processing library for node.js, like [Omnipay](https://github.com/thephpleague/omnipay) for php or [ActiveMerchant](http://activemerchant.org/) for ruby
+
+## Gateways support currently
+
+- [x] [Alipay](http://alipay.com)
+- [x] [Stripe](http://stripe.com)
+- [ ] more to come...
+
+## Installation
+```bash
+npm i merchants
+```
 ## Usage
 ### Initialize
 ```js

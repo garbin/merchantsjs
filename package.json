@@ -1,7 +1,7 @@
 {
   "name": "merchants",
   "version": "0.1.0",
-  "description": "A framework agnostic, multi-gateway payment processing library for node.js",
+  "description": "A framework agnostic, multi-gateway payment processing library for node.js, like Omnipay for php or ActiveMerchants for ruby",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest"
@@ -24,6 +24,8 @@
     "alipay",
     "stripe",
     "paypal",
+    "ActiveMerchants",
+    "Omnipay",
     "wechatpay"
   ],
   "author": "garbinh@gmail.com",
