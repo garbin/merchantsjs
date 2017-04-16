@@ -35,6 +35,7 @@ describe('Merchant', function () {
     expect(request).toBeInstanceOf(Request)
     expect(request.type).toBe('redirect')
     expect(request.body.method).toBe('get')
+    console.log(await request.redirect())
   })
   // it('merchant async callback', async function () {
   //   const merchants = new Merchants()
